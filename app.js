@@ -19,8 +19,8 @@ async function main() {
       message: "What would you like to do?",
       choices: [
         { name: "🎫  Song Management", value: "create" },
-        { name: "📋  Playlist Management", value: "PlayList" },
-        { name: "✏️   View Library", value: "View" },
+        { name: "📋  Playlist Management", value: "playList" },
+        { name: "✏️   View Library", value: "view" },
         { name: "🗑️   Exit Application", value: "cancel" },
       ],
     },
@@ -30,10 +30,10 @@ async function main() {
     case "create":
       await songManagement();
       break;
-    case "PlayList":
+    case "playList":
       await playListManagement();
       break;
-    case "View":
+    case "view":
       await viewLabrary();
       break;
     case "exit":
@@ -50,25 +50,25 @@ async function songManagement() {
       name: "choice",
       message: "What would you like to do?",
       choices: [
-        { name: "🎫  Add new song", value: "Add" },
-        { name: "📋  View all song", value: "View" },
-        { name: "✏️  Play song", value: "Play" },
-        { name: "🗑️  Back to main menu", value: "Back" },
+        { name: "🎫  Add new song", value: "add" },
+        { name: "📋  View all song", value: "view" },
+        { name: "✏️  Play song", value: "play" },
+        { name: "🗑️  Back to main menu", value: "back" },
       ],
     },
   ]);
 
   switch (choice) {
-    case "Add":
+    case "add":
       await addSongs();
       break;
-    case "View":
+    case "view":
       await viewSongs();
       break;
-    case "Play":
+    case "play":
       await playSong();
       break;
-    case "Back":
+    case "back":
       await main();
       break;
   }
@@ -166,29 +166,29 @@ async function playListManagement() {
       name: "choice",
       message: "What would you like to do?",
       choices: [
-        { name: "🎫  Create New Playlist", value: "Create" },
-        { name: "📋  Add Song to Playlist", value: "Add" },
-        { name: "✏️  View All Playlists", value: "View" },
-        { name: "✏️  View Playlist Contents", value: "Viewall" },
-        { name: "🗑️  Back to main menu", value: "Back" },
+        { name: "🎫  Create New Playlist", value: "create" },
+        { name: "📋  Add Song to Playlist", value: "add" },
+        { name: "✏️  View All Playlists", value: "view" },
+        { name: "✏️  View Playlist Contents", value: "viewAll" },
+        { name: "🗑️  Back to main menu", value: "back" },
       ],
     },
   ]);
 
   switch (choice) {
-    case "Create":
+    case "create":
       await createPlayList();
       break;
-    case "Add":
+    case "add":
       await addSongToPlayList();
       break;
-    case "View":
+    case "view":
       await viewAllPlayList();
       break;
-    case "Viewall":
+    case "viewAll":
       await viewPlayListContent();
       break;
-    case "Back":
+    case "back":
       await main();
       break;
   }
